@@ -17,12 +17,19 @@ a = Analysis(
     datas=[(str(assets), "memcard/assets")],
     # Also support installations using only PySide6 Essentials.
     hiddenimports=["PySide6.support.deprecated"],
-    hookspath=[],
+    hookspath=[str(project / "tools" / "pyinstaller_hooks")],
     hooksconfig={},
     runtime_hooks=[],
     excludes=[],
     noarchive=False,
 )
+# MemCard paints ordinary raster widgets; it never creates an OpenGL context.
+# Keep Qt's normal Windows platform plugin, but omit its optional software GL
+# fallback. Do this in the spec so every build has the same contents.
+a.binaries = [
+    entry for entry in a.binaries
+    if Path(entry[0]).name.casefold() != "opengl32sw.dll"
+]
 pyz = PYZ(a.pure)
 exe = EXE(
     pyz, a.scripts, [],

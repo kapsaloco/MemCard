@@ -72,6 +72,17 @@ restore-rpcs3 <snapshot> --library <folder> --target <new-folder>
 
 Use `--help` for options. `--yes` deliberately skips confirmation. Restore supports repeated `--source` paths to protect save directories. CLI recovery creates new folders; replacement is a desktop flow. Verification is automatic, with no standalone manual verify command.
 
+## Windows packaging
+
+`MemCard.spec` builds the complete portable folder under `dist/MemCard`.
+The QtGui hook in `tools/pyinstaller_hooks` keeps standard PyInstaller collection
+but excludes the PDF image and virtual keyboard plugins before their dependencies
+are collected. MemCard uses neither PDF rendering nor a Qt virtual keyboard;
+physical keyboard input and the Windows on-screen keyboard are unaffected.
+The spec also omits `opengl32sw.dll`: the UI uses raster Qt Widgets, not OpenGL.
+Revisit these exclusions if adding PDF previews, Qt Quick/QML, or OpenGL widgets.
+Keep the entire output folder together when distributing the application.
+
 ## Local data and privacy
 
 Settings and rotating logs live under `%LOCALAPPDATA%\MemCard`. Settings writes use a temporary file and atomic replacement. Logs include paths and operation errors, not save contents. Snapshot manifests include the original source path. Keep these local files and real saves out of commits and review them before sharing.

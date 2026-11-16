@@ -1,0 +1,43 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+*.log
+.preview/
+
+# Other local environments, caches and editor configuration
+venv/
+env/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+.vscode/
+.idea/
+.codex/
+
+# Credentials and private local configuration
+.aws/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*credentials*.json
+*secrets*.json
+
+# Preferences and emulator save data
+settings.json
+memcards/
+savedata/
+snapshots/
+*.ps2
+*.p2s
+.staging-*
+.memcard-*
+*.before-MemCard-*

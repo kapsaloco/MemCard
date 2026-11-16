@@ -1,0 +1,11 @@
+MemCard
+Version 0.1.0 - Alpha
+
+Game-save backup and recovery for PCSX2 and RPCS3.
+
+Created by George Kapsalakos
+
+Repository: https://github.com/kapsaloco/MemCard
+Report an issue: https://github.com/kapsaloco/MemCard/issues
+
+Independent project. Not affiliated with PCSX2, RPCS3, or Sony.

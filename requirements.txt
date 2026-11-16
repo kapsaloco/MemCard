@@ -1,0 +1,4 @@
+# Runtime dependencies: Qt widgets and YAML configuration parsing.
+PySide6_Essentials==6.12.0
+shiboken6==6.12.0
+PyYAML==6.0.3

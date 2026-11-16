@@ -2,6 +2,8 @@
 
 For application instructions, setup, tests, and building, see [README.md](README.md).
 
+Published Windows builds and release notes are available on [GitHub Releases](https://github.com/kapsaloco/MemCard/releases).
+
 ## Architecture
 
 The filesystem engine is independent of Qt. The desktop runs discovery, scans, backup, and recovery on background threads. Conflicting controls and navigation are disabled during jobs. A Windows mutex prevents concurrent app/CLI operations in the same session.

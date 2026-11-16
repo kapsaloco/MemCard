@@ -6,6 +6,8 @@ MemCard copies complete save folders, verifies their contents, and keeps dated b
 
 ## Using the app
 
+Download the latest Windows build from [GitHub Releases](https://github.com/kapsaloco/MemCard/releases).
+
 If you have a Windows build, extract the entire folder and run **MemCard.exe**. Keep the accompanying files and `_internal` folder together.
 
 1. Choose **PCSX2 (PlayStation 2)** or **RPCS3 (PlayStation 3)**.
@@ -65,3 +67,9 @@ See [developer documentation](Documentation.md) for the storage format, architec
 ## Local data
 
 Settings and logs stay in `%LOCALAPPDATA%\MemCard`. Backups stay in the folder you select and include the original source path in their manifest. Saves are not uploaded. Keep backups, logs, credentials, and local settings out of source control; `.gitignore` covers the standard locations and file types.
+
+## License
+
+Copyright (c) 2026 George Kapsalakos.
+
+MemCard is licensed under the [GNU General Public License, version 3 only](LICENSE) (GPL-3.0-only). Third-party dependencies retain their own licenses.
